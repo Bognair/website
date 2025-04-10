@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom, #255b91 0%, #707088 30%);
+    overflow-x: hidden; /* Megakadályozza a vízszintes görgetést */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px; /* A navbar magasságának megfelelően, hogy ne takarja el a tartalmat */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* TAPASZTALATOK RÉSZ */
+.tapasztalat {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 0px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 10px 60px rgba(255, 255, 255, 0.3),  /* Alsó árnyék */
+                0px -10px 60px rgba(255, 255, 255, 0.3); /* Felső árnyék */
+}
+.work {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0px;
+}
+.work-item {
+    background-color: #878787;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 400px;
+    border-radius: 5.5%; /* Teljesen kerek kép */
+    border: 3px solid rgb(0, 0, 0);
+}
+.work-item a {
+text-decoration: none;
+color: #ffffff;
+font-weight: bold;
+font-size: 20px;
+}
+.work-item a:hover {
+    color: #000000; /* Hover szín */
+    transition: color 0.15s ease-in-out;
+}
+.work-item img {
+    width: 100%;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* NAVIGÁCIÓS MENÜ */
+.benedek-logo {
+    width: 50px;  /* Igény szerint állíthatod a logó méretét */
+    height: auto;
+    align-items: center;
+}
+.logo-container {
+    flex: 1;  /* A logó bal oldalon lesz */
+    display: flex;
+    justify-content: flex-start;  /* Balra igazítja a logót */
+    align-items: center; /* Függőlegesen középre igazítja a tartalmat */
+}
+.menu-container {
+    display: flex;
+    justify-content: flex-end;  /* A menüt jobbra igazítja */
+    align-items: center;
+}
+.navbar {
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;  /* A két divet balra és jobbra igazítja */
+    align-items: center;  /* Függőlegesen középre igazítja a tartalmat */
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;  /* 100%-os szélesség */
+    max-width: 1400px;  /* Max. szélesség, amely biztosítja, hogy ne nyúljon túl */
+    margin: 0 auto;  /* Középre igazítás */
+    position: relative;
+    border: 2px solid #000000;  /* 2px vastag, szürke keret */
+    border-radius: 40px;  /* Lekerekített sarkok */
+    position: fixed;  /* Fixáljuk a navbar-t */
+    left: 0;  /* Bal oldalra igazítjuk */
+    right: 0;
+    box-sizing: border-box;  /* A padding is beleszámít a szélességbe */
+    width: 100%;  /* A teljes szélességet kitölti */
+    z-index: 1000;  /* Biztosítja, hogy a navbar a többi elem fölött legyen */
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);  /* Árnyék a navbar alatt */
+    top: 20px;  /* 20px-el feljebb emeljük */
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: flex;
+    margin: 0 20px;
+}
+nav ul li a {
+    font-size: 10px;
+    color: rgb(149, 0, 0);
+    position: relative;
+    right: 20%; /* X koordináta */
+    left: 20%; /* X koordináta */
+    top: 35%;
+    font-weight: bold;
+}
+.nav-list a.active {
+    text-decoration: underline;
+}
+.nav-list li a:hover {
+    color: #606060; /* Hover szín */
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Horizontálisan középre igazítja a tartalmat */
+    align-items: center; /* Függőlegesen középre igazítja a tartalmat */
+}
+.nav-list li {
+    margin-left: 20px;  /* Távolság a menüpontok között */
+}
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.1s ease-in-out;
+}
+
+
+
+
+/* RESZPONZIVITÁS */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+
+
+/* RÓLAM RÉSZ */
+.container {
+        display: flex;
+        flex-direction: column; /* A fő rész és a kis képek egymás alatt legyenek */
+        align-items: center; /* Középre igazítás */
+        text-align: justify; /* Sorkizárás */
+        margin-left: 70px;
+        margin-right: 70px;
+        color: white;
+        margin-top: 10px;
+}
+.main-image-container {
+        text-align: center; /* Kép középre igazítása */
+}
+.main-image {
+        width: 100%; /* A fő kép szélessége */
+        max-width: 600px;
+        margin-right: 20px;
+        margin-top: 90px;  /* Fentről 20px távolságra helyezi */
+
+        border-radius: 10px;
+        box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.2);
+        border: 2.5px solid black;
+        border-radius: 10px; /* Lekerekített sarkok */
+}
+.title-container {
+        text-align: center; /* Cím középre igazítása */
+        margin-top: 20px; /* Külön hely a kép és a cím között */
+}
+h1 {
+        font-size: 4rem;
+        color: #060606;
+}
+
+.text-container {
+        margin-top: 20px;
+        line-height: 2; /* Növeli a sortávolságot */
+
+} 
+.p1 {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #000000;
+        margin-bottom: 15px; /* Távolság a bekezdések között */
+} 
+
+
+
+
+/* LÁBJEGYZET RÉSZ */
+footer {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 2px 2px;  /* Bal és jobb oldali padding növelése */
+    text-align: center;
+    width: 100%;  /* 100%-os szélesség */
+    max-width: 90%;  /* Max. szélesség, amely biztosítja, hogy ne nyúljon túl */
+    margin: 0 auto;  /* Középre igazítás */
+    border-radius: 10px;
+    position: relative;
+    bottom: 20px;  /* 20px-el feljebb emeljük */
+    margin-top: 20px;
+}
+.footer-container {
+    max-width: 1200px; /* Tartalom szélességének korlátozása */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+.footer-links li {
+    display: inline;
+}
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+.footer-links a:hover {
+    color: #ffffff; /* Hover szín */
+}
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+.social-gallery {
+    display: flex;
+    justify-content: center; /* A kis képek középre kerülnek */
+    gap: 15px; /* Kis képek közötti térköz */
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.social-gallery img {
+    width: 30px;
+    height: auto;
+    border-radius: 10px;
+
+}
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em; /* Kisebb betűméret az extra sorokhoz */
+
+}
+
+
+
+
+/* TANULMÁNYOK RÉSZ */
+.tanulmanyok-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 0px;
+    background-color: transparent;
+    box-shadow: 0px 10px 60px rgba(255, 255, 255, 0.3),  /* Alsó árnyék */
+                0px -10px 60px rgba(255, 255, 255, 0.3); /* Felső árnyék */
+}
+
+
+
+
+/* KAPCSOLAT RÉSZ */
+.kapcsolat {
+    display: block;
+    justify-content: center;
+    background-color: #b2b2b2;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.kapcsolat-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 40px 20px 20px;    
+
+}
+/* A szöveg és a kép elrendezése */
+.kapcsolat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Szöveg beállítása (bal oldalon) */
+.text-kapcsolat1 {
+    width: 100%; /* Szöveg szélessége */
+}
+.text-kapcsolat1 h2 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    margin-left: 100px;
+    color: #606060;
+}
+.text-kapcsolat1-1 h3 {
+    list-style-type: disc;
+    margin-left: 10px;
+    line-height: 2; /* Növeli a sortávolságot */
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+
+}
+/* Kép beállítása (jobb oldalon) */
+.terkep-blokk iframe {
+    border: 10px solid #000; /* Fekete színű keret, 2px vastagságú */
+    border-radius: 10px;     /* Lekerekített sarkok, 10px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék a térkép körül */
+}
+.terkep-blokk img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px; /* Lekerekített sarkok, ha kell */
+}
+
+/* A kép és szöveg konténerének stílusai */
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    overflow: hidden;  /* Megakadályozza, hogy a szöveg vagy a kép kilógjon */
+    border-bottom: 3px solid #000000; /* Kép körüli keret */
+    border-radius: 5% 5% 0 0; /* Csak a felső sarkok lekerekítése */
+    object-fit: cover;
+
+}
+
+/* A kép alapértelmezett stílusa */
+.image {
+    
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;    
+    transition: filter 0.3s ease; /* Fokozatosan változik a filter */
+}
+
+/* Az overlay szöveg, ami alapértelmezett állapotban rejtve van */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Félig átlátszó fekete háttér */
+    color: white;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;  /* Alapértelmezés szerint rejtve van */
+    transition: opacity 0.3s ease;  /* Szép fokozatos megjelenés */
+}
+
+/* Hover hatás: amikor az egér rákerül a képre */
+.image-container:hover .overlay {
+    opacity: 1;  /* Megjeleníti a szöveget */
+}
+
+/* Hover hatás a képre: amikor az egér rákerül */
+.image-container:hover .image {
+    filter: blur(5px);  /* A kép homályosítása */
+}
+/* csak az aktív oldalcím legyen aláhúzva */
+
+/* .active {
+   text-decoration: underline;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reszponzív beállítások ELEJE */
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column; /* Ha a képernyő kisebb, akkor a kép és szöveg egymás alá kerül */
+        text-align: center; /* Kép és szöveg középre igazítása */
+    }
+
+    .rg .ml .ah {
+        width: 70%; /* A kép szélessége nagyobb képernyőn 70% */
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .text1 .text2 .text3 {
+        width: 90%; /* A szöveg szélessége nagyobb képernyőn 90% */
+    }
+}
+
+@media (max-width: 480px) {
+    .rg .ml .ah {
+        width: 100%; /* Mobilon a kép szélessége 100% */
+        margin-bottom: 10px;
+    }
+
+    .text1 .text2 .text3 {
+        width: 100%; /* Mobilon a szöveg szélessége 100% */
+    }
+}
+/* Reszponzív beállítások VÉGE*/
